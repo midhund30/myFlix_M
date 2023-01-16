@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}HOME{% endblock %} {% block content%}
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light">Category</div>
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/">All</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Action">Action</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Sports">Sports</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/Romance">Romance</a>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h1 class="mt-4">Video Gallery</h1>
+        <div class = "row g-3">
+            {% for vid in gallery %}
+            <div class = "col-12 col-md-6 col-lg-4">
+                <div class = "card">
+                    <img src="http://34.142.113.214/pics/{{vid.video.pic}}" alt = "{{vid.video.Name}}" class = "card-img-top" style = "Height:400px;">
+                    <div class = "card-body">
+                        <a href ="/play/{{vid.video.uuid}}" class="btn btn-primary btn-lg btn-block" role = "button">Watch</a>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+{%endblock%} 
+
